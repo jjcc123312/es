@@ -5,9 +5,8 @@
 
 package com.study.clients;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import co.elastic.clients.elasticsearch.core.DeleteByQueryRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.study.clients.service.BulkService;
 import com.study.clients.service.HighLevelQueryService;
 import com.study.dto.User;
 import java.io.IOException;
@@ -42,7 +41,6 @@ public class ElasticsearchByRestHighLevelClient01 {
 
 
     public static void main(String[] args) throws IOException {
-        // private static Logger logger = Logger.getLogger(ElasticsearchByRestHighLevelClient01.class);
         // 创建客户端对象
         try (RestHighLevelClient client = new RestHighLevelClient(
             RestClient.builder(new HttpHost("localhost", 9200, "http"))
